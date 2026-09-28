@@ -4,8 +4,6 @@ import { Heading } from '../design-system/Heading';
 import { Text } from '../design-system/Text';
 import { DigitalDNA } from './DigitalDNA';
 import { CapabilitiesSection } from './CapabilitiesSection';
-import { TechConstellation } from './TechConstellation';
-import { PhilosophySection } from './PhilosophySection';
 import { Divider } from '../design-system/Divider';
 import { Cpu, Cloud, Code, Layout, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
 
@@ -99,16 +97,6 @@ export const AboutSection: React.FC = () => {
 
       {/* 03: CAPABILITIES SECTION ("What I Build") */}
       <CapabilitiesSection />
-
-      <Divider variant="subtle" label="TECHNOLOGY CONSTELLATION" />
-
-      {/* 04: TECHNOLOGY CONSTELLATION */}
-      <TechConstellation />
-
-      <Divider variant="subtle" label="ENGINEERING ETHOS" />
-
-      {/* 05: ENGINEERING PHILOSOPHY */}
-      <PhilosophySection />
     </section>
   );
 };

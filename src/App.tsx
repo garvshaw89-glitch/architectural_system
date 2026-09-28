@@ -12,6 +12,7 @@ import { Navigation } from './components/navigation/Navigation';
 import { Hero } from './components/hero/Hero';
 import { AboutSection } from './components/about/AboutSection';
 import { ProjectsSection } from './components/projects/ProjectsSection';
+import { EngineeringSection } from './components/engineering/EngineeringSection';
 import { LoadingExperience } from './components/hero/LoadingExperience';
 import { DesignSystemShowcase } from './components/design-system/DesignSystemShowcase';
 import { BrandDocViewer } from './components/BrandDocViewer';
@@ -64,6 +65,9 @@ export default function App() {
 
             {/* Selected Projects Showcase */}
             <ProjectsSection />
+
+            {/* Phase 06: Engineering + Systems Architecture + GitHub Telemetry + Constellation */}
+            <EngineeringSection />
           </main>
 
           {/* System Footer Note */}

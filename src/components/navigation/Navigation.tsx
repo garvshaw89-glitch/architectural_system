@@ -16,8 +16,7 @@ export const Navigation: React.FC<NavigationProps> = ({ onNavigate }) => {
   const navLinks = [
     { id: 'work', label: 'WORK' },
     { id: 'about', label: 'ABOUT' },
-    { id: 'lab', label: 'LAB' },
-    { id: 'writing', label: 'WRITING' },
+    { id: 'engineering', label: 'ENGINEERING' },
   ];
 
   const handleItemClick = (id: string, label: string) => {
