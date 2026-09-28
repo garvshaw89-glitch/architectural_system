@@ -34,7 +34,7 @@ export default function App() {
   };
 
   const handleGithubClick = () => {
-    window.open('https://github.com/GarvShaw', '_blank', 'noopener,noreferrer');
+    window.open('https://github.com/garvshaw89-glitch', '_blank', 'noopener,noreferrer');
   };
 
   return (

@@ -46,11 +46,11 @@ export const CursorSystem: React.FC = () => {
   return (
     <div
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none select-none z-50 overflow-hidden"
+      className="fixed inset-0 pointer-events-none select-none z-[9999] overflow-hidden"
     >
       {/* 01: Inner Light Point (5px-7px, NEVER disappears, instantaneous response) */}
       <div
-        className="fixed w-1.5 h-1.5 rounded-full bg-[#F5F5F0] -translate-x-1/2 -translate-y-1/2 z-50 transition-transform duration-75"
+        className="fixed w-1.5 h-1.5 rounded-full bg-[#F5F5F0] -translate-x-1/2 -translate-y-1/2 z-[10000] transition-transform duration-75 pointer-events-none"
         style={{
           left: `${mouseX}px`,
           top: `${mouseY}px`,
@@ -60,7 +60,7 @@ export const CursorSystem: React.FC = () => {
 
       {/* 02: Outer Spring-Lerped Ring */}
       <div
-        className={`fixed -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center transition-all duration-200 ease-out z-40 ${
+        className={`fixed -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center transition-all duration-200 ease-out z-[9999] pointer-events-none ${
           isExpanded
             ? 'w-16 h-16 bg-[#101216]/85 border border-[#5B8CFF]/70 backdrop-blur-md shadow-[0_0_30px_rgba(91,140,255,0.35)]'
             : 'w-9 h-9 border border-white/25 bg-white/[0.02]'

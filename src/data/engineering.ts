@@ -34,10 +34,10 @@ export interface RecentCommit {
 }
 
 export const GITHUB_PROFILE = {
-  username: 'GarvShaw',
+  username: 'garvshaw89-glitch',
   displayName: 'Garv Shaw',
   title: 'Digital Architect & Systems Engineer',
-  githubUrl: 'https://github.com/GarvShaw',
+  githubUrl: 'https://github.com/garvshaw89-glitch',
   bio: 'Building intelligent digital systems through code, AI, cloud topography, and precision design.',
   location: 'Remote / Global',
   totalRepositories: 12,

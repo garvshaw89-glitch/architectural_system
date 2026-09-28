@@ -167,7 +167,7 @@ export const ContactSection: React.FC = () => {
             {/* Direct Channel Networks */}
             <div className="grid grid-cols-2 gap-3">
               <a
-                href="https://github.com/GarvShaw"
+                href="https://github.com/garvshaw89-glitch"
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() => setCursorMode('visit')}

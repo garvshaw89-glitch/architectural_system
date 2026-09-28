@@ -1,0 +1,16 @@
+{
+  "name": "GARV SHAW — Digital Architecture Portfolio",
+  "short_name": "Garv Shaw",
+  "description": "Digital Architect: AI × Cloud × Software.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
