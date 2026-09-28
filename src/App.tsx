@@ -10,12 +10,13 @@ import { AtmosphericEnvironment } from './components/hero/AtmosphericEnvironment
 import { CursorSystem } from './components/hero/CursorSystem';
 import { Navigation } from './components/navigation/Navigation';
 import { Hero } from './components/hero/Hero';
-import { SectionTransition } from './components/hero/SectionTransition';
+import { AboutSection } from './components/about/AboutSection';
+import { ProjectsSection } from './components/projects/ProjectsSection';
 import { LoadingExperience } from './components/hero/LoadingExperience';
 import { DesignSystemShowcase } from './components/design-system/DesignSystemShowcase';
 import { BrandDocViewer } from './components/BrandDocViewer';
 import { IdentityState } from './components/hero/IdentityCore';
-import { Layers, LayoutGrid, Sparkles, Terminal, X } from 'lucide-react';
+import { Layers, LayoutGrid, X } from 'lucide-react';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -49,16 +50,20 @@ export default function App() {
           {/* 03: Architectural Minimal Navigation (Transparent -> Floating Glass Pill) */}
           <Navigation onNavigate={scrollToSection} />
 
-          {/* 04: Hero Landing Experience (105svh, asymmetric composition, Identity Core, independent reveals) */}
+          {/* 04: Storytelling Flow: Hero -> About -> Digital DNA -> Capabilities -> Tech Constellation -> Philosophy -> Projects */}
           <main>
+            {/* The Hero Viewport */}
             <Hero
               onExploreClick={() => scrollToSection('work')}
               onGithubClick={handleGithubClick}
               onIdentityChange={(state) => setActiveIdentityState(state)}
             />
 
-            {/* 05: Cinematic Section Transition (01 / ABOUT + 02 / WORK PREVIEW) */}
-            <SectionTransition />
+            {/* Phase 04: About + Digital DNA + Capabilities + Tech Constellation + Engineering Philosophy */}
+            <AboutSection />
+
+            {/* Selected Projects Showcase */}
+            <ProjectsSection />
           </main>
 
           {/* System Footer Note */}

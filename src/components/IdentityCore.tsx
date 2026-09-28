@@ -25,14 +25,17 @@ export const IdentityCore: React.FC<IdentityCoreProps> = ({
   useEffect(() => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
-      setStateIndex((prev) => {
-        const next = (prev + 1) % CORE_STATES.length;
-        if (onStateChange) onStateChange(CORE_STATES[next]);
-        return next;
-      });
+      setStateIndex((prev) => (prev + 1) % CORE_STATES.length);
     }, 3200);
     return () => clearInterval(interval);
-  }, [isAutoPlaying, onStateChange]);
+  }, [isAutoPlaying]);
+
+  // Safely notify parent of state changes outside render
+  useEffect(() => {
+    if (onStateChange) {
+      onStateChange(CORE_STATES[stateIndex]);
+    }
+  }, [stateIndex, onStateChange]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;

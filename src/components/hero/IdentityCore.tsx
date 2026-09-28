@@ -27,21 +27,23 @@ export const IdentityCore: React.FC<IdentityCoreProps> = ({ onStateChange, class
     if (!isAutoCycling || prefersReducedMotion) return;
 
     const interval = setInterval(() => {
-      setStateIndex((prev) => {
-        const next = (prev + 1) % STATES.length;
-        if (onStateChange) onStateChange(STATES[next]);
-        return next;
-      });
+      setStateIndex((prev) => (prev + 1) % STATES.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isAutoCycling, onStateChange, prefersReducedMotion]);
+  }, [isAutoCycling, prefersReducedMotion]);
+
+  // Safely notify parent component when stateIndex changes outside the render cycle
+  useEffect(() => {
+    if (onStateChange) {
+      onStateChange(STATES[stateIndex]);
+    }
+  }, [stateIndex, onStateChange]);
 
   // Handle manual state change
   const handleManualState = (idx: number) => {
     setStateIndex(idx);
     setIsAutoCycling(false);
-    if (onStateChange) onStateChange(STATES[idx]);
   };
 
   // 3D perspective calculation from cursor
