@@ -13,11 +13,13 @@ import { Hero } from './components/hero/Hero';
 import { AboutSection } from './components/about/AboutSection';
 import { ProjectsSection } from './components/projects/ProjectsSection';
 import { EngineeringSection } from './components/engineering/EngineeringSection';
+import { ThinkingSection } from './components/thinking/ThinkingSection';
+import { ContactSection } from './components/contact/ContactSection';
 import { LoadingExperience } from './components/hero/LoadingExperience';
 import { DesignSystemShowcase } from './components/design-system/DesignSystemShowcase';
 import { BrandDocViewer } from './components/BrandDocViewer';
 import { IdentityState } from './components/hero/IdentityCore';
-import { Layers, LayoutGrid, X } from 'lucide-react';
+import { Layers, LayoutGrid, X, ArrowUpRight, ShieldCheck, Terminal, Cpu } from 'lucide-react';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -38,52 +40,163 @@ export default function App() {
   return (
     <ScrollProvider>
       <EnvironmentProvider>
-        {/* Optional 1.2s Initial System Boot (Phase 3 Section 47) */}
+        {/* 00: Loading / System Initialization */}
         {loading && <LoadingExperience onComplete={() => setLoading(false)} />}
 
         <div className="min-h-screen bg-[#050505] text-[#F5F5F0] selection:bg-[#5B8CFF]/30 selection:text-white relative overflow-x-hidden">
-          {/* 01: Global Atmospheric Environment (Ambient light, architectural grid, noise, particles) */}
+          {/* Global Atmospheric Environment */}
           <AtmosphericEnvironment />
 
-          {/* 02: Persistent Dual-Layer Intelligent Cursor (Never disappears) */}
+          {/* Persistent Dual-Layer Intelligent Cursor */}
           <CursorSystem />
 
-          {/* 03: Architectural Minimal Navigation (Transparent -> Floating Glass Pill) */}
+          {/* Primary Architectural Navigation */}
           <Navigation onNavigate={scrollToSection} />
 
-          {/* 04: Storytelling Flow: Hero -> About -> Digital DNA -> Capabilities -> Tech Constellation -> Philosophy -> Projects */}
+          {/* 
+            GARV SHAW — LOCKED MASTER SECTION FLOW:
+            01 — HERO / INTELLIGENCE IN MOTION
+            02 — ABOUT / THE PERSON BEHIND THE SYSTEM
+            03 — DIGITAL DNA / HOW GARV THINKS
+            04 — CAPABILITIES / WHAT GARV BUILDS
+            05 — SELECTED WORK / PROOF
+            06 — PROJECT CASE STUDIES / HOW IT WAS BUILT
+            07 — ENGINEERING / UNDER THE INTERFACE
+            08 — WRITING / THINKING ("EXPLORE MY THINKING")
+            09 — CONTACT / COLLABORATION ("BUILD WITH ME")
+            10 — FOOTER / ARCHITECTURAL SIGN-OFF
+          */}
           <main>
-            {/* The Hero Viewport */}
+            {/* 01: Hero / Intelligence in Motion */}
             <Hero
               onExploreClick={() => scrollToSection('work')}
               onGithubClick={handleGithubClick}
               onIdentityChange={(state) => setActiveIdentityState(state)}
             />
 
-            {/* Phase 04: About + Digital DNA + Capabilities + Tech Constellation + Engineering Philosophy */}
+            {/* 02, 03, 04: About (The Person Behind the System) + Digital DNA + Capabilities */}
             <AboutSection />
 
-            {/* Selected Projects Showcase */}
+            {/* 05, 06: Selected Work + Project Case Studies */}
             <ProjectsSection />
 
-            {/* Phase 06: Engineering + Systems Architecture + GitHub Telemetry + Constellation */}
+            {/* 07: Engineering / Under the Interface (System Topology, Constellation, GitHub Telemetry, Stack Matrix, Terminal) */}
             <EngineeringSection />
+
+            {/* 08: Writing / Thinking ("EXPLORE MY THINKING") */}
+            <ThinkingSection />
+
+            {/* 09: Contact / Collaboration ("BUILD WITH ME") */}
+            <ContactSection />
           </main>
 
-          {/* System Footer Note */}
-          <footer className="relative z-10 border-t border-white/[0.06] bg-[#050505] py-12 px-6 sm:px-12 text-xs font-mono text-[#6B6E75] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="text-[#F5F5F0] font-semibold">GARV SHAW</span>
-              <span>·</span>
-              <span>DIGITAL ARCHITECT</span>
-              <span>·</span>
-              <span className="text-[#5B8CFF]">CORE VECTOR: {activeIdentityState}</span>
+          {/* 10: Architectural Footer & Colophon */}
+          <footer className="relative z-10 border-t border-white/[0.08] bg-[#050505] pt-16 pb-12 px-6 sm:px-12 text-xs font-mono text-[#6B6E75] space-y-12">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start justify-between">
+              {/* Brand Colophon */}
+              <div className="md:col-span-5 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#101216] border border-white/15 flex items-center justify-center font-display font-bold text-sm text-[#F5F5F0]">
+                    G
+                  </div>
+                  <div>
+                    <span className="text-[#F5F5F0] font-bold text-sm block">GARV SHAW</span>
+                    <span className="text-[10px] text-[#A5A7AC] uppercase tracking-wider">
+                      DIGITAL ARCHITECT // 2026
+                    </span>
+                  </div>
+                </div>
+                <p className="font-sans text-xs text-[#A5A7AC] max-w-sm leading-relaxed">
+                  Building intelligent digital systems at the intersection of AI, cloud computing,
+                  software engineering, and sensory restraint.
+                </p>
+              </div>
+
+              {/* Fast Architectural Navigation Index */}
+              <div className="md:col-span-4 space-y-3">
+                <span className="text-[10px] text-[#5B8CFF] uppercase tracking-wider block font-semibold">
+                  // DIRECTORY INDEX
+                </span>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <button
+                    onClick={() => scrollToSection('hero')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    01 / HERO
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('about')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    02 / ABOUT
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('capabilities')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    03 / CAPABILITIES
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('work')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    04 / SELECTED WORK
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('engineering')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    05 / ENGINEERING
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('thoughts')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    06 / THOUGHTS
+                  </button>
+                  <button
+                    onClick={() => scrollToSection('contact')}
+                    className="text-left text-[#A5A7AC] hover:text-[#F5F5F0] transition-colors"
+                  >
+                    07 / CONTACT
+                  </button>
+                </div>
+              </div>
+
+              {/* Realtime System Telemetry */}
+              <div className="md:col-span-3 space-y-3">
+                <span className="text-[10px] text-[#A5A7AC] uppercase tracking-wider block">
+                  SYSTEM TELEMETRY:
+                </span>
+                <div className="space-y-1.5 text-[11px]">
+                  <div className="flex items-center justify-between">
+                    <span>ACTIVE CORE:</span>
+                    <span className="text-[#5B8CFF] font-semibold">{activeIdentityState}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span>ARCHITECTURE:</span>
+                    <span className="text-white">80% CALM / 20% SPECTACLE</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span>SYSTEM HEALTH:</span>
+                    <span className="text-emerald-400">100% OPERATIONAL</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="flex items-center gap-6">
-              <span>80% CALM + 20% SPECTACLE</span>
-              <span>·</span>
-              <span>2026 // ALL SYSTEMS OPERATIONAL</span>
+            {/* Bottom Hairline & Legal Creed */}
+            <div className="max-w-7xl mx-auto pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+              <div>
+                © 2026 GARV SHAW · ALL RIGHTS RESERVED
+              </div>
+              <div className="flex items-center gap-3 text-[#A5A7AC]">
+                <span>TYPESCRIPT RIGOR</span>
+                <span>·</span>
+                <span>ZERO PLACEHOLDER DATA</span>
+                <span>·</span>
+                <span>SWISS TYPOGRAPHY</span>
+              </div>
             </div>
           </footer>
 
