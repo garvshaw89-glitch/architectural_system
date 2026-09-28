@@ -1,70 +1,134 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Project, PROJECTS } from '../../data/projects';
+import { ProjectCardItem } from './ProjectCardItem';
+import { CaseStudyModal } from './CaseStudyModal';
+import { ProjectNavigation } from './ProjectNavigation';
 import { SectionLabel } from '../design-system/SectionLabel';
 import { Heading } from '../design-system/Heading';
-import { ProjectMeta } from '../design-system/ProjectMeta';
-import { ImageReveal } from '../design-system/ImageReveal';
 import { Button } from '../design-system/Button';
+import { Divider } from '../design-system/Divider';
+import { ArrowUpRight, Sparkles, Send } from 'lucide-react';
 import { useEnvironment } from '../../context/EnvironmentContext';
-import { ArrowUpRight } from 'lucide-react';
 
 export const ProjectsSection: React.FC = () => {
   const { setCursorMode } = useEnvironment();
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
+  const [activeProjectId, setActiveProjectId] = useState<string>(PROJECTS[0].id);
+
+  const scrollToProject = (id: string) => {
+    setActiveProjectId(id);
+    const el = document.getElementById(`project-${id}`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  const handleContactClick = () => {
+    window.location.href = 'mailto:garvshaw89@gmail.com?subject=Project%20Inquiry%20%E2%80%94%20Digital%20Architecture';
+  };
 
   return (
     <section
       id="work"
-      aria-label="Selected Architecture Projects"
-      className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 sm:py-36 space-y-16 select-none"
+      aria-label="Selected Systems and Products Exhibition"
+      className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-24 sm:py-36 space-y-28 select-none"
     >
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-white/[0.06] pb-4 gap-4">
-        <div>
-          <SectionLabel index={6} label="SELECTED ARCHITECTURE" category="PRODUCTION PLATFORMS" />
-          <Heading level="heading" className="mt-2">
-            FEATURED WORK
-          </Heading>
+      {/* Sticky Side Project Navigation (xl viewports) */}
+      <ProjectNavigation
+        activeProjectId={activeProjectId}
+        onSelectProject={scrollToProject}
+      />
+
+      {/* 01: SECTION DRAMATIC INTRODUCTION */}
+      <div className="space-y-8 border-b border-white/[0.08] pb-12">
+        <div className="flex items-center justify-between">
+          <SectionLabel index={2} label="SELECTED WORK" category="PRODUCTION PORTFOLIO" />
+          <span className="font-mono text-xs text-[#6B6E75]">04 DIGITAL SYSTEMS</span>
         </div>
-        <div className="font-mono text-xs text-[#6B6E75]">
-          ENGINEERED FOR RESILIENCE & SCALE
+
+        <div className="max-w-4xl space-y-4">
+          <h2 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-[#F5F5F0] leading-[0.94] text-balance">
+            BUILT
+            <br />
+            TO EXIST
+            <br />
+            <span className="bg-gradient-to-r from-[#F5F5F0] via-[#5B8CFF] to-[#795CFF] bg-clip-text text-transparent">
+              IN THE REAL WORLD.
+            </span>
+          </h2>
+
+          <p className="font-sans text-base sm:text-lg text-[#A5A7AC] max-w-xl leading-[1.65]">
+            A selection of digital systems, experiments and products built across software, AI,
+            cloud and interactive experiences. Engineered with strict type safety, zero placeholder
+            data, and sensory restraint.
+          </p>
         </div>
       </div>
 
-      <div className="space-y-16">
-        {/* Project 01: ArogyaSeva */}
-        <div
-          onMouseEnter={() => setCursorMode('open')}
-          onMouseLeave={() => setCursorMode('default')}
-          className="p-8 sm:p-12 rounded-[24px] bg-[#08090B] border border-white/[0.08] hover:border-white/[0.2] transition-all space-y-8 group"
-        >
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-            <div className="space-y-3">
-              <ProjectMeta
-                index={1}
-                year={2026}
-                role="LEAD SYSTEM ARCHITECT"
-                deliverable="FULL-STACK CLINICAL TELEHEALTH PLATFORM"
-                technologies={['DISTRIBUTED AI', 'CLOUD CLUSTERS', 'REACT 19', 'POSTGRESQL']}
+      {/* 02: THE EXHIBITION SEQUENCE */}
+      <div className="space-y-28">
+        {PROJECTS.map((project, idx) => (
+          <React.Fragment key={project.id}>
+            <ProjectCardItem
+              project={project}
+              onOpenCaseStudy={(p) => setSelectedCaseStudy(p)}
+            />
+            {idx < PROJECTS.length - 1 && (
+              <Divider
+                variant="subtle"
+                label={`TRANSITION // SYSTEM 0${project.number} → 0${PROJECTS[idx + 1].number}`}
               />
-              <Heading level="display-lg">
-                AROGYASEVA HEALTH ENGINE
-              </Heading>
-              <p className="font-sans text-xs sm:text-sm text-[#A5A7AC] max-w-2xl leading-relaxed">
-                A mission-critical clinical intelligence platform connecting rural clinics with specialist doctors. Features sub-50ms triage algorithms, automated medical record transcription, and resilient offline-first mobile sync.
-              </p>
-            </div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
 
-            <Button variant="secondary" iconType="arrow-up-right" className="self-start lg:self-center shrink-0">
-              EXPLORE ARCHITECTURE
-            </Button>
+      {/* 03: PROJECT EXHIBITION EXIT & CTA (Section 51 & 62) */}
+      <div className="pt-20 border-t border-white/[0.08] space-y-12">
+        <div className="space-y-2">
+          <span className="font-mono text-xs text-[#5B8CFF] tracking-widest uppercase block">
+            // BEYOND PORTFOLIO CARDS
+          </span>
+          <h3 className="font-display font-bold text-3xl sm:text-5xl md:text-6xl tracking-tight text-[#F5F5F0] leading-snug">
+            MORE THAN PROJECTS.
+            <br />
+            <span className="text-[#A5A7AC]">
+              SYSTEMS BUILT TO MOVE IDEAS FORWARD.
+            </span>
+          </h3>
+        </div>
+
+        <div className="p-8 sm:p-12 rounded-[24px] bg-[#08090B] border border-white/[0.08] flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="space-y-2 max-w-lg">
+            <h4 className="font-display font-bold text-2xl text-[#F5F5F0]">
+              Have an idea worth building?
+            </h4>
+            <p className="font-sans text-xs sm:text-sm text-[#A5A7AC] leading-relaxed">
+              Whether architecting a zero-downtime cloud platform, engineering autonomous AI
+              pipelines, or crafting an editorial digital interface—let’s make it exceptional.
+            </p>
           </div>
 
-          <ImageReveal
-            alt="ArogyaSeva Health Engine Architecture"
-            treatment="cinematic"
-            caption="Distributed clinical triage infrastructure with automated diagnosis pipeline"
-            metadata="LATENCY: 42MS // AVAILABILITY: 99.99%"
-          />
+          <Button
+            variant="primary"
+            size="lg"
+            iconType="arrow-right"
+            onClick={handleContactClick}
+            className="shrink-0"
+          >
+            LET'S BUILD SOMETHING SIGNIFICANT
+          </Button>
         </div>
       </div>
+
+      {/* 04: FULL-SCREEN INTERACTIVE CASE STUDY MODAL */}
+      {selectedCaseStudy && (
+        <CaseStudyModal
+          project={selectedCaseStudy}
+          onClose={() => setSelectedCaseStudy(null)}
+          onSelectProject={(p) => setSelectedCaseStudy(p)}
+        />
+      )}
     </section>
   );
 };
