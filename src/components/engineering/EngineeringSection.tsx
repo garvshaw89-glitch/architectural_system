@@ -3,6 +3,7 @@ import { EngineeringHero } from './EngineeringHero';
 import { EngineeringPhilosophy } from './EngineeringPhilosophy';
 import { ConstellationMatrix } from './ConstellationMatrix';
 import { GithubTelemetry } from './GithubTelemetry';
+import { GithubReadmeSection } from './GithubReadmeSection';
 import { DevelopmentWorkflow } from './DevelopmentWorkflow';
 import { SystemStackTier } from './SystemStackTier';
 import { EngineeringTerminalCTA } from './EngineeringTerminalCTA';
@@ -28,25 +29,31 @@ export const EngineeringSection: React.FC = () => {
       {/* 03: Technology Constellation & Stack Matrix */}
       <ConstellationMatrix />
 
-      <Divider variant="subtle" label="03.3 // PUBLIC GITHUB & SOURCE TELEMETRY" />
+      <Divider variant="subtle" label="03.3A // PUBLIC GITHUB & SOURCE TELEMETRY" />
 
       {/* 04: GitHub Activity Heatmap & Verified Repositories */}
       <GithubTelemetry />
 
+      <Divider variant="subtle" label="03.3B // GITHUB REPOSITORY & PROFILE SPECIFICATION (README.md)" />
+
+      {/* 05: GitHub Profile & Repository README Section */}
+      <GithubReadmeSection />
+
       <Divider variant="subtle" label="03.4 // ARCHITECTURAL DEVELOPMENT LIFECYCLE" />
 
-      {/* 05: Development System & Workflow */}
+      {/* 06: Development System & Workflow */}
       <DevelopmentWorkflow />
 
       <Divider variant="subtle" label="03.5 // 4-TIER FULL-STACK ARCHITECTURE" />
 
-      {/* 06: Full-Stack Tier Hierarchy & Trace Simulator */}
+      {/* 07: Full-Stack Tier Hierarchy & Trace Simulator */}
       <SystemStackTier />
 
       <Divider variant="subtle" label="03.6 // SYSTEM CONSOLE & TECHNICAL CTA" />
 
-      {/* 07: Interactive Terminal & Collaboration CTA */}
+      {/* 08: Interactive Terminal & Collaboration CTA */}
       <EngineeringTerminalCTA />
     </section>
   );
 };
+

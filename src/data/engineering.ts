@@ -50,10 +50,10 @@ export const VERIFIED_REPOSITORIES: GitHubRepo[] = [
   {
     id: 'arogyaseva',
     name: 'ArogyaSeva',
-    fullName: 'GarvShaw/ArogyaSeva',
+    fullName: 'garvshaw89-glitch/ArogyaSeva',
     description:
       'AI-Powered Multilingual Healthcare Ecosystem connecting rural patients with specialist triage, automated diagnosis routing, and offline sync.',
-    url: 'https://github.com/GarvShaw/ArogyaSeva',
+    url: 'https://github.com/garvshaw89-glitch/ArogyaSeva',
     language: 'TypeScript / Python',
     languageColor: '#3178C6',
     stars: 14,
@@ -65,10 +65,10 @@ export const VERIFIED_REPOSITORIES: GitHubRepo[] = [
   {
     id: 'chessverse',
     name: 'ChessVerse',
-    fullName: 'GarvShaw/ChessVerse',
+    fullName: 'garvshaw89-glitch/ChessVerse',
     description:
       'Spatial Interactive Chess Platform featuring spatial kinematics, isometric projection, and sub-60fps move trajectory easing without bloat.',
-    url: 'https://github.com/GarvShaw/ChessVerse',
+    url: 'https://github.com/garvshaw89-glitch/ChessVerse',
     language: 'TypeScript',
     languageColor: '#3178C6',
     stars: 9,
@@ -80,10 +80,10 @@ export const VERIFIED_REPOSITORIES: GitHubRepo[] = [
   {
     id: 'virtual-food-photographer',
     name: 'Virtual-Food-Photographer',
-    fullName: 'GarvShaw/Virtual-Food-Photographer',
+    fullName: 'garvshaw89-glitch/Virtual-Food-Photographer',
     description:
       'Generative culinary visual studio utilizing neural style transfer, structured composition rules, and automated commercial food enhancement.',
-    url: 'https://github.com/GarvShaw/Virtual-Food-Photographer',
+    url: 'https://github.com/garvshaw89-glitch/Virtual-Food-Photographer',
     language: 'Python',
     languageColor: '#3572A5',
     stars: 11,
@@ -95,10 +95,10 @@ export const VERIFIED_REPOSITORIES: GitHubRepo[] = [
   {
     id: 'portfolio',
     name: 'digital-architecture-portfolio',
-    fullName: 'GarvShaw/digital-architecture-portfolio',
+    fullName: 'garvshaw89-glitch/digital-architecture-portfolio',
     description:
       'Futuristic luxury digital architecture portfolio & design system built with React 19, Tailwind CSS v4, and custom physics cursors.',
-    url: 'https://github.com/GarvShaw',
+    url: 'https://github.com/garvshaw89-glitch',
     language: 'TypeScript',
     languageColor: '#3178C6',
     stars: 18,
@@ -335,3 +335,85 @@ export const SYSTEM_TIERS = [
     ],
   },
 ];
+
+export const GITHUB_README_SPEC = {
+  fileName: 'README.md',
+  repositoryPath: 'garvshaw89-glitch/garvshaw89-glitch',
+  branch: 'main',
+  commitHash: 'c8f1e09',
+  commitTime: '2 hours ago',
+  fileSize: '4.8 KB',
+  rawContent: `# GARV SHAW — DIGITAL ARCHITECT
+> AI × CLOUD × SOFTWARE — INTELLIGENCE IN MOTION
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19.0-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4.0-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Cloud Run](https://img.shields.io/badge/Google_Cloud-Cloud_Run-4285F4?style=flat-square&logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+[![Status](https://img.shields.io/badge/Production-Deployed-10b981?style=flat-square)](https://github.com/garvshaw89-glitch)
+
+---
+
+## 🏛️ ARCHITECTURAL THESIS
+
+I architect and ship high-resilience digital systems at the convergence of Frontier AI, distributed cloud backends, and mathematical frontend interfaces.
+
+- ⚡ Sub-100ms latency budgets across interactive state transitions
+- 🧠 Multi-agent DAG routing with deterministic JSON schema enforcement
+- 🛡️ Zero mock fallbacks for core systems; 100% verified real implementations
+- 📐 Token-driven Swiss architectural typographic discipline (anti-AI slop)
+
+---
+
+## 🚀 VERIFIED PRODUCTION SYSTEMS
+
+### 01. ArogyaSeva
+- **Domain:** AI Healthcare & Telemedicine Triage
+- **Architecture:** Distributed Agent Routing & Offline-First State Synchronization
+- **Stack:** TypeScript, Python, FastAPI, React 19, Google Cloud Run
+- **Repo:** [github.com/garvshaw89-glitch/ArogyaSeva](https://github.com/garvshaw89-glitch/ArogyaSeva)
+
+### 02. ChessVerse
+- **Domain:** Spatial Kinematics & Interactive WebGL
+- **Architecture:** Isometric Vector Projection & Sub-60fps Move Trajectory
+- **Stack:** TypeScript, Canvas 2D / WebGL, Custom Kinematics Engine
+- **Repo:** [github.com/garvshaw89-glitch/ChessVerse](https://github.com/garvshaw89-glitch/ChessVerse)
+
+### 03. Virtual Food Photographer
+- **Domain:** Generative AI & Neural Image Synthesis
+- **Architecture:** Ingestion Pipeline, Style Transfer & Multi-stage Latent Upscaling
+- **Stack:** Python, PyTorch, Stable Diffusion, FastAPI, React
+- **Repo:** [github.com/garvshaw89-glitch/Virtual-Food-Photographer](https://github.com/garvshaw89-glitch/Virtual-Food-Photographer)
+
+### 04. Digital Architecture Platform
+- **Domain:** Full-Stack Portfolio & Design System
+- **Architecture:** Token-Driven Architectural Hierarchy & Real-Time Telemetry Bridge
+- **Stack:** React 19, Vite 6, Tailwind CSS v4, Lucide Icons, TypeScript
+- **Repo:** [github.com/garvshaw89-glitch](https://github.com/garvshaw89-glitch)
+
+---
+
+## 🛠️ QUICK START & REPOSITORY CLONE
+
+\`\`\`bash
+# Clone the repository
+git clone https://github.com/garvshaw89-glitch/digital-architecture-portfolio.git
+
+# Enter project root
+cd digital-architecture-portfolio
+
+# Install production dependencies
+npm install
+
+# Start development server
+npm run dev
+\`\`\`
+
+---
+
+## 📬 DIRECT INQUIRIES & COLLABORATION
+- GitHub: [@garvshaw89-glitch](https://github.com/garvshaw89-glitch)
+- Direct Channel: garvshaw89@gmail.com
+- Availability: High-impact AI systems architecture, enterprise software engineering.`,
+};
+
